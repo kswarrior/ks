@@ -2,11 +2,8 @@ name: Minecraft Paper Server (16GB RAM)
 
 on:
   workflow_dispatch:
-  push:
-    branches: [ main ]
 
 permissions:
-  contents: read
   actions: write
   contents: write   # Required for committing & pushing files back
 
