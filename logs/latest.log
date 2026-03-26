@@ -1,32 +1,29 @@
-[04:20:23] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
-[04:20:23] [ServerMain/INFO]: Found new data pack file/bukkit, loading it automatically
-[04:20:23] [ServerMain/INFO]: Found new data pack paper, loading it automatically
-[04:20:23] [ServerMain/INFO]: No existing world data, creating new world
-[04:20:24] [ServerMain/INFO]: Loaded 1175 recipes
-[04:20:24] [ServerMain/INFO]: Loaded 1276 advancements
-[04:20:24] [Server thread/INFO]: Starting minecraft server version 1.20.6
-[04:20:24] [Server thread/INFO]: Loading properties
-[04:20:25] [Server thread/INFO]: This server is running Paper version 1.20.6-151-ver/1.20.6@a4f0f5c (2024-10-30T19:13:22Z) (Implementing API version 1.20.6-R0.1-SNAPSHOT)
-[04:20:25] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[04:20:25] [Server thread/INFO]: Using 4 threads for Netty based IO
-[04:20:26] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
+[10:10:50] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[10:10:51] [ServerMain/INFO]: Loaded 1175 recipes
+[10:10:51] [ServerMain/INFO]: Loaded 1276 advancements
+[10:10:52] [Server thread/INFO]: Starting minecraft server version 1.20.6
+[10:10:52] [Server thread/INFO]: Loading properties
+[10:10:52] [Server thread/INFO]: This server is running Paper version 1.20.6-151-ver/1.20.6@a4f0f5c (2024-10-30T19:13:22Z) (Implementing API version 1.20.6-R0.1-SNAPSHOT)
+[10:10:52] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[10:10:52] [Server thread/INFO]: Using 4 threads for Netty based IO
+[10:10:53] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
     We recommend installing the spark profiler as a replacement: https://spark.lucko.me/
     For more information please visit: https://github.com/PaperMC/Paper/issues/8948
-[04:20:26] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 1 worker threads, and gen parallelism of 1 threads
-[04:20:26] [Server thread/INFO]: Default game type: SURVIVAL
-[04:20:26] [Server thread/INFO]: Generating keypair
-[04:20:26] [Server thread/INFO]: Starting Minecraft server on *:25565
-[04:20:26] [Server thread/INFO]: Using epoll channel type
-[04:20:26] [Server thread/INFO]: Paper: Using libdeflate (Linux x86_64) compression from Velocity.
-[04:20:26] [Server thread/INFO]: Paper: Using OpenSSL 3.0.x (Linux x86_64) cipher from Velocity.
-[04:20:26] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[04:20:26] [Server thread/INFO]: Preparing level "world"
-[04:20:35] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[04:20:41] [Server thread/INFO]: Time elapsed: 5970 ms
-[04:20:41] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
-[04:20:43] [Server thread/INFO]: Time elapsed: 1688 ms
-[04:20:43] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
-[04:20:43] [Server thread/INFO]: Time elapsed: 482 ms
-[04:20:43] [Server thread/INFO]: Running delayed init tasks
-[04:20:43] [Server thread/INFO]: Done (19.010s)! For help, type "help"
-[04:20:43] [Server thread/INFO]: Timings Reset
+[10:10:53] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 1 worker threads, and gen parallelism of 1 threads
+[10:10:53] [Server thread/INFO]: Default game type: SURVIVAL
+[10:10:53] [Server thread/INFO]: Generating keypair
+[10:10:53] [Server thread/INFO]: Starting Minecraft server on *:25565
+[10:10:53] [Server thread/INFO]: Using epoll channel type
+[10:10:53] [Server thread/INFO]: Paper: Using libdeflate (Linux x86_64) compression from Velocity.
+[10:10:53] [Server thread/INFO]: Paper: Using OpenSSL 3.0.x (Linux x86_64) cipher from Velocity.
+[10:10:53] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[10:10:53] [Server thread/INFO]: Preparing level "world"
+[10:10:54] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[10:10:55] [Server thread/INFO]: Time elapsed: 1219 ms
+[10:10:55] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[10:10:55] [Server thread/INFO]: Time elapsed: 226 ms
+[10:10:55] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[10:10:55] [Server thread/INFO]: Time elapsed: 106 ms
+[10:10:55] [Server thread/INFO]: Running delayed init tasks
+[10:10:55] [Server thread/INFO]: Done (3.793s)! For help, type "help"
+[10:10:55] [Server thread/INFO]: Timings Reset
