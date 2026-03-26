@@ -5,47 +5,48 @@ on:
 
 permissions:
   actions: write
-  contents: write   # Required for committing & pushing files back
+  contents: write
 
 jobs:
   run-minecraft:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository (all files from root)
+      - name: Checkout repository (full history)
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0                    # ← CRITICAL FIX
+          token: ${{ secrets.GITHUB_TOKEN }} # Ensures push works
 
-      - name: Setup Java 21 (required for Paper 1.20.6)
+      - name: Setup Java 21
         uses: actions/setup-java@v4
         with:
           java-version: '21'
           distribution: 'temurin'
 
-      - name: Download server.jar if it doesn't exist
+      - name: Download Paper server.jar (if missing)
         run: |
           if [ ! -f server.jar ]; then
-            echo "server.jar not found → downloading Paper 1.20.6 build..."
+            echo "server.jar not found → downloading Paper 1.20.6 build 151..."
             curl -L -o server.jar \
-              https://fill-data.papermc.io/v1/objects/4b011f5adb5f6c72007686a223174fce82f31aeb4b34faf4652abc840b47e640/paper-1.20.6-151.jar
+              https://api.papermc.io/v2/projects/paper/versions/1.20.6/builds/151/downloads/paper-1.20.6-151.jar
             echo "Download complete!"
           else
-            echo "server.jar already exists → using it."
+            echo "Using existing server.jar"
           fi
 
-      - name: Create eula.txt if it doesn't exist
+      - name: Create eula.txt if missing
         run: |
           if [ ! -f eula.txt ]; then
-            echo "eula.txt not found → creating with eula=true"
             echo "eula=true" > eula.txt
-          else
-            echo "eula.txt already exists → keeping current settings."
+            echo "Created eula.txt"
           fi
 
-      - name: Run Minecraft Paper Server (16 GB RAM)
-        timeout-minutes: 350          # 5 hours (safe under GitHub's 6h limit)
-        continue-on-error: true       # IMPORTANT: Allows upload + re-run even when step is killed
+      - name: Run Minecraft Paper Server (16 GB RAM - 5 hours)
+        timeout-minutes: 350
+        continue-on-error: true
         run: |
-          echo "Starting Paper server with 16 GB RAM allocation (will run up to 5 hours)..."
+          echo "🚀 Starting Paper server with 16 GB RAM..."
           java -Xmx16G -Xms16G \
                -XX:+UseG1GC \
                -XX:+ParallelRefProcEnabled \
@@ -67,36 +68,40 @@ jobs:
                -XX:MaxTenuringThreshold=1 \
                -jar server.jar nogui
 
-      - name: Upload all changed files back to repository
-        if: always()                  # Runs even if server step timed out
+      - name: Commit & Push all server changes (world, plugins, logs, etc.)
+        if: always()
         run: |
           echo "Checking for changes made by the Minecraft server..."
-          
-          # Configure git
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          
-          # Add all changes
+
           git add -A
-          
-          # Check if there are any changes
+
           if git diff --staged --quiet; then
-            echo "No changes to commit."
+            echo "✅ No changes to commit."
           else
-            echo "Committing and pushing changes..."
+            echo "📝 Committing changes..."
             git commit -m "chore: Update Minecraft server files (world, plugins, logs, etc.) [skip ci]"
+
+            echo "🔄 Pulling latest remote changes (rebase)..."
+            git fetch origin
+            git rebase origin/${{ github.ref_name }} || {
+              echo "⚠️ Rebase failed (rare conflict). Using merge instead..."
+              git merge origin/${{ github.ref_name }} --no-edit
+            }
+
+            echo "🚀 Pushing to GitHub..."
             git push
-            echo "✅ Successfully pushed updated files to repository."
+            echo "✅ Successfully pushed updated files!"
           fi
 
-      # Last step: Re-run the workflow automatically
-      - name: Re-run workflow
-        if: always()                  # Runs even if server step timed out
+      - name: Re-run workflow automatically
+        if: always()
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "Server stopped (or timed out). Triggering new workflow run..."
-          gh workflow run \
+          echo "Server stopped/timed out → triggering next run..."
+          gh workflow run "${{ github.workflow }}" \
             --repo ${{ github.repository }} \
-            --ref ${{ github.ref_name }} \
-            "${{ github.workflow }}"
+            --ref ${{ github.ref_name }}
