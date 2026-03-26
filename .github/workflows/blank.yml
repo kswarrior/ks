@@ -42,7 +42,7 @@ jobs:
           fi
 
       - name: Run Minecraft Paper Server (16 GB RAM)
-        timeout-minutes: 300          # 5 hours (safe under GitHub's 6h limit)
+        timeout-minutes: 350          # 5 hours (safe under GitHub's 6h limit)
         continue-on-error: true       # IMPORTANT: Allows upload + re-run even when step is killed
         run: |
           echo "Starting Paper server with 16 GB RAM allocation (will run up to 5 hours)..."
