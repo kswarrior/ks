@@ -1,29 +1,29 @@
-[09:29:21] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
-[09:29:23] [ServerMain/INFO]: Loaded 1175 recipes
-[09:29:23] [ServerMain/INFO]: Loaded 1276 advancements
-[09:29:23] [Server thread/INFO]: Starting minecraft server version 1.20.6
-[09:29:23] [Server thread/INFO]: Loading properties
-[09:29:23] [Server thread/INFO]: This server is running Paper version 1.20.6-151-ver/1.20.6@a4f0f5c (2024-10-30T19:13:22Z) (Implementing API version 1.20.6-R0.1-SNAPSHOT)
-[09:29:24] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[09:29:24] [Server thread/INFO]: Using 4 threads for Netty based IO
-[09:29:25] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
+[15:19:56] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[15:19:58] [ServerMain/INFO]: Loaded 1175 recipes
+[15:19:58] [ServerMain/INFO]: Loaded 1276 advancements
+[15:19:58] [Server thread/INFO]: Starting minecraft server version 1.20.6
+[15:19:58] [Server thread/INFO]: Loading properties
+[15:19:58] [Server thread/INFO]: This server is running Paper version 1.20.6-151-ver/1.20.6@a4f0f5c (2024-10-30T19:13:22Z) (Implementing API version 1.20.6-R0.1-SNAPSHOT)
+[15:19:59] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[15:19:59] [Server thread/INFO]: Using 4 threads for Netty based IO
+[15:19:59] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
     We recommend installing the spark profiler as a replacement: https://spark.lucko.me/
     For more information please visit: https://github.com/PaperMC/Paper/issues/8948
-[09:29:25] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 1 worker threads, and gen parallelism of 1 threads
-[09:29:25] [Server thread/INFO]: Default game type: SURVIVAL
-[09:29:25] [Server thread/INFO]: Generating keypair
-[09:29:25] [Server thread/INFO]: Starting Minecraft server on *:25565
-[09:29:25] [Server thread/INFO]: Using epoll channel type
-[09:29:25] [Server thread/INFO]: Paper: Using libdeflate (Linux x86_64) compression from Velocity.
-[09:29:25] [Server thread/INFO]: Paper: Using OpenSSL 3.0.x (Linux x86_64) cipher from Velocity.
-[09:29:25] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[09:29:25] [Server thread/INFO]: Preparing level "world"
-[09:29:26] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[09:29:27] [Server thread/INFO]: Time elapsed: 1442 ms
-[09:29:27] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
-[09:29:28] [Server thread/INFO]: Time elapsed: 289 ms
-[09:29:28] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
-[09:29:28] [Server thread/INFO]: Time elapsed: 147 ms
-[09:29:28] [Server thread/INFO]: Running delayed init tasks
-[09:29:28] [Server thread/INFO]: Done (4.493s)! For help, type "help"
-[09:29:28] [Server thread/INFO]: Timings Reset
+[15:19:59] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 1 worker threads, and gen parallelism of 1 threads
+[15:20:00] [Server thread/INFO]: Default game type: SURVIVAL
+[15:20:00] [Server thread/INFO]: Generating keypair
+[15:20:00] [Server thread/INFO]: Starting Minecraft server on *:25565
+[15:20:00] [Server thread/INFO]: Using epoll channel type
+[15:20:00] [Server thread/INFO]: Paper: Using libdeflate (Linux x86_64) compression from Velocity.
+[15:20:00] [Server thread/INFO]: Paper: Using OpenSSL 3.0.x (Linux x86_64) cipher from Velocity.
+[15:20:00] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[15:20:00] [Server thread/INFO]: Preparing level "world"
+[15:20:00] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[15:20:01] [Server thread/INFO]: Time elapsed: 1320 ms
+[15:20:01] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[15:20:02] [Server thread/INFO]: Time elapsed: 274 ms
+[15:20:02] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[15:20:02] [Server thread/INFO]: Time elapsed: 161 ms
+[15:20:02] [Server thread/INFO]: Running delayed init tasks
+[15:20:02] [Server thread/INFO]: Done (3.849s)! For help, type "help"
+[15:20:02] [Server thread/INFO]: Timings Reset
